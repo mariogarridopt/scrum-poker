@@ -39,7 +39,7 @@ function getRoomCode() {
         return oldCode;
     }
 
-    const newCode = (Math.random() + 1).toString(36).substring(7);
+    const newCode = (Math.random() + 1).toString(36).substring(7).toUpperCase();
     localStorage.setItem('room_code', newCode);
 
     return newCode;
@@ -225,6 +225,14 @@ function toggleVisibleMode(){
     APIsetVisiable(newVis);
 }
 
+function forceURLWithRoomCode() {
+    const params = new URLSearchParams(window.location.search);
+    const room_code = getRoomCode();
+    if(!params.has('room')) {
+        window.location.replace("?room=" + room_code);
+    }
+}
+
 // API METHODS
 function APIsubmitUser(user) {
     fetch(API_ENDPOINT, {
@@ -297,7 +305,6 @@ function APIgetAllScores() {
     });
 }
 
-// API METHODS
 function APIClearScores() {
    fetch(API_ENDPOINT, {
         method: 'DELETE',
@@ -315,6 +322,7 @@ function APIClearScores() {
 }
 
 // START APP
+forceURLWithRoomCode();
 pickName();
 showUrl();
 
