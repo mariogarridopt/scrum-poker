@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scrum Pocker Online</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/card.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="wrapper">
+        <h1 id="room-name">Scrum Pocker Room</h1>
+    </div>
+
+    <div id="card-deck" data-score="?">
+        <div class="card border" id="base-card">
+            <div class="inner card-number">
+                ?
+            </div>
+            <div class="circle">
+                <div class="inner"></div>
+            </div>
+            <div class="logo">
+                <img src="img/cards-icon.png" alt="icon">
+            </div>
+        </div>
+    </div>
+
+    <div style="clear: both;"></div>
+
+    <div class="wrapper">
+        <!--div class="spacer"></div-->
+
+        <div class="average">Average: <span id="average-score">-</span></div>
+
+        <div class="options">
+            <div id="clear-estimates" class="btn">Delete Estimates</div>
+            <div id="show-estimates" class="btn">Show Estimates</div>
+        </div>
+
+        <table id="results-table">
+        </table>
+    </div>
+
+    <footer id="current-url">-</footer>
+
+</body>
+<script src="js/cards.js" async></script>
+</html>
